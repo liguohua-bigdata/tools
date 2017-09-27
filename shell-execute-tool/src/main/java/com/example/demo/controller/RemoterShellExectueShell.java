@@ -11,18 +11,18 @@ import utils.RemoteShellTool;
  */
 @RestController
 public class RemoterShellExectueShell {
-    @RequestMapping(value = "/exec", method = RequestMethod.GET)
-    public String exec(@RequestParam(value = "ipAddress", required = true) String ipAddres,
+    @RequestMapping(value = "/execFile", method = RequestMethod.GET)
+    public String execFile(@RequestParam(value = "ipAddress", required = true) String ipAddres,
                        @RequestParam(value = "userName", required = true) String userName,
                        @RequestParam(value = "passWord", required = true) String passWord,
                        @RequestParam(value = "shellPath", required = true) String shellPath,
                        @RequestParam(value = "charSet", required = false, defaultValue = "utf-8") String charSet) {
-        System.err.println("hhhhhhhhhhhhhhhhhhhhhhh"+ipAddres);
-        System.err.println("hhhhhhhhhhhhhhhhhhhhhhh"+userName);
-        System.err.println("hhhhhhhhhhhhhhhhhhhhhhh"+passWord);
-        System.err.println("hhhhhhhhhhhhhhhhhhhhhhh"+shellPath);
-        System.err.println("hhhhhhhhhhhhhhhhhhhhhhh"+charSet);
-
+        //add debug info
+        System.out.println("ipAddres: "+ipAddres);
+        System.out.println("userName: "+userName);
+        System.out.println("passWord: "+passWord);
+        System.out.println("shellPath: "+shellPath);
+        System.out.println("charSet: "+charSet);
 
         RemoteShellTool tool = new RemoteShellTool(ipAddres, userName,
                 passWord, charSet);
@@ -30,4 +30,23 @@ public class RemoterShellExectueShell {
         System.err.println(result);
         return result;
     }
+//    @RequestMapping(value = "/execCmd", method = RequestMethod.GET)
+//    public String execCmd(@RequestParam(value = "ipAddress", required = true) String ipAddres,
+//                           @RequestParam(value = "userName", required = true) String userName,
+//                           @RequestParam(value = "passWord", required = true) String passWord,
+//                           @RequestParam(value = "cmd", required = true) String cmd,
+//                           @RequestParam(value = "charSet", required = false, defaultValue = "utf-8") String charSet) {
+//        //add debug info
+//        System.out.println("ipAddres: "+ipAddres);
+//        System.out.println("userName: "+userName);
+//        System.out.println("passWord: "+passWord);
+//        System.out.println("cmd: "+cmd);
+//        System.out.println("charSet: "+charSet);
+//
+//        RemoteShellTool tool = new RemoteShellTool(ipAddres, userName,
+//                passWord, charSet);
+//        String result = tool.exec(cmd.trim());
+//        System.err.println(result);
+//        return result;
+//    }
 }

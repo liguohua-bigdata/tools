@@ -52,9 +52,8 @@ public class RemoteShellTool {
         return result;  
     }  
   
-    public String processStdout(InputStream in, String charset) {  
-      
-        byte[] buf = new byte[1024];  
+    public String processStdout(InputStream in, String charset) {
+        byte[] buf = new byte[102400];
         StringBuffer sb = new StringBuffer();  
         try {  
             while (in.read(buf) != -1) {  
