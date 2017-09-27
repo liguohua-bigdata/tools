@@ -18,5 +18,10 @@
 	</parent>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.jvnet.hudson</groupId>
+			<artifactId>ganymed-ssh2</artifactId>
+			<version>build210-hudson-1</version>
+		</dependency>
 	</dependencies>
 </project>
