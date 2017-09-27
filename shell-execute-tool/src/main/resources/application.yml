@@ -1,0 +1,5 @@
+server:
+  port: ${SERVER_PORT:50001}
+spring:
+  application:
+    name: @project.artifactId@  #对应所获取的配置文件的{application}
